@@ -6,5 +6,8 @@ public class Main {
 	// write your code here
 
         System.out.println("this is for testing mode only");
+
+//        WeatherProvider weatherProvider = new WeatherProvider();
+//        System.out.println(weatherProvider.getCurrentWeather());
     }
 }

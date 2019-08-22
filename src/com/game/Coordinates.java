@@ -1,9 +1,9 @@
 package com.game;
 
 public class Coordinates {
-    private int longitude;
-    private int latitude;
-    private int height;
+    private int longitude =0;
+    private int latitude =0;
+    private int height =0;
 
     Coordinates(int longitude, int latitude, int height) {
         this.longitude = longitude;
