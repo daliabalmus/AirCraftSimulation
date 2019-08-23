@@ -1,6 +1,6 @@
 package com.game;
 
-public interface Flyable {
+public interface IFlyable {
     void updateConditions();
     void registerTower(WeatherProvider weatherProvider);
 }
