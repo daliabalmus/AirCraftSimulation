@@ -1,6 +1,7 @@
 .idea
 /.idea
-
+/out
+out
 
 ##########################
 ## Java
@@ -19,5 +20,5 @@ hs_err_pid*
 .idea/
 *.ipr
 *.iws
-
+out/
 .idea_modules/
