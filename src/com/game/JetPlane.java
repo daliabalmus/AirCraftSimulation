@@ -1,9 +1,9 @@
 package com.game;
 
-public class Helicopter extends Aircraft implements IFlyable {
+public class JetPlane extends Aircraft implements IFlyable {
     private WeatherTower weatherTower;
 
-    public Helicopter(String name, Coordinates coordinates) {
+    public JetPlane(String name, Coordinates coordinates) {
         super(name, coordinates);
 //        this.weatherTower = weatherTower;
     }

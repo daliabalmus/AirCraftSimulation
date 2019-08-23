@@ -4,16 +4,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Tower {
-    public List<IFlyable> observers = new  ArrayList<IFlyable>();
+    public List<IFlyable> observers = new ArrayList<IFlyable>();
 
     public void register(IFlyable flyable) {
         observers.add(flyable);
-        System.out.println(flyable.getClass().getName() + " registered to the tower");
+        System.out.println("Tower says: " + flyable.getClass().getName()
+                + " registered to the tower");
     }
 
     public void unregister(IFlyable flyable) {
         observers.remove(flyable);
-        System.out.println(flyable.getClass().getName() + " unregistered from the tower");
+        System.out.println("Tower says: " + flyable.getClass().getName() + " unregistered from the tower");
     }
 
     protected void conditionsChanged() {

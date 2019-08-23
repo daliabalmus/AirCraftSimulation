@@ -1,2 +1,2 @@
 # AirCraftSimulation
- This is an aircraft simulation
+ This is a minimal aircraft simulation
