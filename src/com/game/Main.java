@@ -48,6 +48,7 @@ public class Main {
                      System.out.println("Simulation completed. Aircrafts arrived to their destination");
                  }
                  if (weatherTower.observers.size() == 0) {
+                     System.out.println("No more aircraft remaining. Simulation quit");
                      timer.cancel();
                  }
             }
