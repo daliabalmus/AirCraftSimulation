@@ -25,7 +25,7 @@ public class Main {
         helicopter2.registerTower(weatherTower);
 
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter number of simulations between 1 and 5");
+        System.out.println("Enter number of simulations");
         int simulations = scanner.nextInt();
 
         System.out.println();
