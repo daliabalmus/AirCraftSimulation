@@ -43,7 +43,7 @@ public class Main {
                 System.out.println();
                 System.out.println("Simulation " + counter);
                 weatherTower.changeWeather();
-                 if (counter > simulations) {
+                 if (counter >= simulations) {
                      timer.cancel();
                      System.out.println();
                      System.out.println("Simulation completed. Aircrafts arrived to their destination");
