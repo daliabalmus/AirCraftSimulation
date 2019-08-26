@@ -32,7 +32,7 @@ public class Main {
 
         System.out.println("Ready for landing");
 
-        int delay = 500;   // delay for 5 sec.
+        int delay = 500;
         int interval = 1000;  // iterate every sec.
         Timer timer = new Timer();
 
@@ -43,7 +43,7 @@ public class Main {
                 System.out.println();
                 System.out.println("Simulation " + counter);
                 weatherTower.changeWeather();
-                 if (counter >= simulations) {
+                 if (counter > simulations) {
                      timer.cancel();
                      System.out.println();
                      System.out.println("Simulation completed. Aircrafts arrived to their destination");

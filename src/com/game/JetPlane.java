@@ -28,6 +28,17 @@ public class JetPlane extends Aircraft implements IFlyable {
         } else {
             System.out.println("JetPlane" + this.name + "(" + this.id + "): I can'' reach the weather tower.");
         }
+
+        if (coordinates.getHeight() < 0) {
+            weatherTower.unregister(this);
+            System.out.println(this.getClass().getSimpleName() + this.name + "(" +  this.id + ") unregistered from the tower");
+            System.out.println("Current coordinates (m) " + coordinates.getLongitude() +
+                    " longitude, " + coordinates.getLatitude() +
+                    " latitude, " + coordinates.getHeight() + " height");
+        } else if (coordinates.getHeight() > 100) {
+            coordinates.setHeight(100);
+            System.out.println(this.getClass().getSimpleName() + this.name + "(" +  this.id + ") remained at the upper limit");
+        }
     }
 
     @Override

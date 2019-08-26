@@ -16,9 +16,12 @@ public class Baloon extends Aircraft implements IFlyable {
             System.out.println("Baloon" + this.name + "(" + this.id + "): Let's enjoy the good weather and take some pictures");
             coordinates.setLongitude(coordinates.getLongitude() + 2);
             coordinates.setHeight(coordinates.getHeight() + 4);
+
+            System.out.println(coordinates.getHeight());
         } else if (weather.equals("RAIN")) {
             System.out.println("Baloon" + this.name + "(" + this.id + "): Damn you rain! You messed up my baloon");
             coordinates.setHeight(coordinates.getHeight() - 5);
+
         } else if (weather.equals("FOG")) {
             System.out.println("Baloon" + this.name + "(" + this.id + "): I can't see anything!");
             coordinates.setHeight(coordinates.getHeight() - 3);
@@ -28,11 +31,6 @@ public class Baloon extends Aircraft implements IFlyable {
         } else {
             System.out.println("Baloon" + this.name + "(" + this.id + "): I can't reach the weather tower.");
         }
-    }
-
-    @Override
-    public void registerTower(WeatherTower weatherTower) {
-        this.weatherTower = weatherTower;
 
         if (coordinates.getHeight() < 0) {
             weatherTower.unregister(this);
@@ -43,9 +41,15 @@ public class Baloon extends Aircraft implements IFlyable {
         } else if (coordinates.getHeight() > 100) {
             coordinates.setHeight(100);
             System.out.println(this.getClass().getSimpleName() + this.name + "(" +  this.id + ") remained at the upper limit");
-        } else {
-            weatherTower.register(this);
-            System.out.println("Tower says:"+ this.getClass().getSimpleName() + this.name + "(" +  this.id + ") registered to the tower");
         }
+    }
+
+    @Override
+    public void registerTower(WeatherTower weatherTower) {
+        this.weatherTower = weatherTower;
+
+        weatherTower.register(this);
+        System.out.println("Tower says:"+ this.getClass().getSimpleName() + this.name + "(" +  this.id + ") registered to the tower");
+
     };
 }
