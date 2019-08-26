@@ -34,7 +34,7 @@ public class Baloon extends Aircraft implements IFlyable {
 
         if (coordinates.getHeight() < 0) {
             weatherTower.unregister(this);
-            System.out.println(this.getClass().getSimpleName() + this.name + "(" +  this.id + ") unregistered from the tower");
+            System.out.println(this.getClass().getSimpleName() + this.name + "(" +  this.id + ") unregistered from the tower. Simulation can't continue with negative coordinations.");
             System.out.println("Current coordinates (m) " + coordinates.getLongitude() +
                     " longitude, " + coordinates.getLatitude() +
                     " latitude, " + coordinates.getHeight() + " height");
