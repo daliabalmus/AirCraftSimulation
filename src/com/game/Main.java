@@ -1,7 +1,6 @@
 package com.game;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class Main {
 
@@ -10,8 +9,6 @@ public class Main {
         System.out.println("Simulation Started");
 
         WeatherTower weatherTower = new WeatherTower();
-        Tower tower = new Tower();
-        List<IFlyable> flyables = new ArrayList<IFlyable>();
 
         IFlyable baloon = AircraftFactory.newAirCraft("Baloon", "#B1", 0, 0, 0);
         IFlyable jetPlane = AircraftFactory.newAirCraft("JetPlane", "#J1", 0, 0, 0);
@@ -26,11 +23,33 @@ public class Main {
         helicopter1.registerTower(weatherTower);
         assert helicopter2 != null;
         helicopter2.registerTower(weatherTower);
-        
-        baloon.updateConditions();
-        jetPlane.updateConditions();
-        helicopter1.updateConditions();
-        helicopter2.updateConditions();
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter number of simulations between 1 and 5");
+        int simulations = scanner.nextInt();
+
+        System.out.println();
+
+        System.out.println("Ready for landing");
+
+        int delay = 500;   // delay for 5 sec.
+        int interval = 1000;  // iterate every sec.
+        Timer timer = new Timer();
+
+        timer.scheduleAtFixedRate(new TimerTask() {
+            int counter = 0;
+            public void run() {
+                counter++;
+                System.out.println();
+                System.out.println("Simulation " + counter);
+                weatherTower.changeWeather();
+                 if (counter >= simulations) {
+                     timer.cancel();
+                     System.out.println();
+                     System.out.println("Simulation completed. Aircrafts arrived to their destination");
+                 }
+            }
+        }, delay, interval);
 
     }
 }

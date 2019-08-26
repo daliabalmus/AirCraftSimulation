@@ -14,12 +14,17 @@ public class JetPlane extends Aircraft implements IFlyable {
 
         if (weather.equals("SUN")) {
             System.out.println("JetPlane" + this.name + "(" + this.id + "): Let's enjoy the good weather and take some pictures");
+            coordinates.setLatitude(coordinates.getLatitude() + 10);
+            coordinates.setHeight(coordinates.getHeight() + 2);
         } else if (weather.equals("RAIN")) {
-            System.out.println("JetPlane" + this.name + "(" + this.id + "): Damn you rain! You messed up my baloon");
+            System.out.println("JetPlane" + this.name + "(" + this.id + "): It's raining. Better watch out for lightings.");
+            coordinates.setLatitude(coordinates.getLatitude() + 5);
         } else if (weather.equals("FOG")) {
             System.out.println("JetPlane" + this.name + "(" + this.id + "): I can't see anything!");
+            coordinates.setLatitude(coordinates.getLatitude() + 1);
         } else if (weather.equals("SNOW")) {
-            System.out.println("JetPlane" + this.name + "(" + this.id + "): It's snowing. We're gonna crash.");
+            System.out.println("JetPlane" + this.name + "(" + this.id + "): OMG! Winter is coming!");
+            coordinates.setHeight(coordinates.getHeight() - 12);
         } else {
             System.out.println("JetPlane" + this.name + "(" + this.id + "): I can'' reach the weather tower.");
         }

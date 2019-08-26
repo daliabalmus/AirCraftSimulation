@@ -12,7 +12,6 @@ public class Tower {
 
     public void unregister(IFlyable flyable) {
         observers.remove(flyable);
-//        System.out.println("Tower says: " + flyable.getClass().getSimpleName() + " unregistered from the tower");
     }
 
     protected void conditionsChanged() {
