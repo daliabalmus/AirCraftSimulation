@@ -26,12 +26,12 @@ public class JetPlane extends Aircraft implements IFlyable {
             System.out.println("JetPlane" + this.name + "(" + this.id + "): OMG! Winter is coming!");
             coordinates.setHeight(coordinates.getHeight() - 12);
         } else {
-            System.out.println("JetPlane" + this.name + "(" + this.id + "): I can'' reach the weather tower.");
+            System.out.println("JetPlane" + this.name + "(" + this.id + "): I can't reach the weather tower.");
         }
 
         if (coordinates.getHeight() < 0) {
             weatherTower.unregister(this);
-            System.out.println(this.getClass().getSimpleName() + this.name + "(" +  this.id + ") unregistered from the tower. Simulation can't continue with negative coordinations.");
+            System.out.println(this.getClass().getSimpleName() + this.name + "(" +  this.id + ") unregistered from the tower. Simulation can't continue with negative coordinates.");
             System.out.println("Current coordinates (m) " + coordinates.getLongitude() +
                     " longitude, " + coordinates.getLatitude() +
                     " latitude, " + coordinates.getHeight() + " height");

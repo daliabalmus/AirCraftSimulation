@@ -29,7 +29,6 @@ public class Main {
         int simulations = scanner.nextInt();
 
         System.out.println();
-
         System.out.println("Ready for landing");
 
         int delay = 500;
@@ -48,8 +47,10 @@ public class Main {
                      System.out.println();
                      System.out.println("Simulation completed. Aircrafts arrived to their destination");
                  }
+                 if (weatherTower.observers.size() == 0) {
+                     timer.cancel();
+                 }
             }
         }, delay, interval);
-
     }
 }

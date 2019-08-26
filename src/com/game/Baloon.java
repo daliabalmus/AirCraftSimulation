@@ -16,8 +16,6 @@ public class Baloon extends Aircraft implements IFlyable {
             System.out.println("Baloon" + this.name + "(" + this.id + "): Let's enjoy the good weather and take some pictures");
             coordinates.setLongitude(coordinates.getLongitude() + 2);
             coordinates.setHeight(coordinates.getHeight() + 4);
-
-            System.out.println(coordinates.getHeight());
         } else if (weather.equals("RAIN")) {
             System.out.println("Baloon" + this.name + "(" + this.id + "): Damn you rain! You messed up my baloon");
             coordinates.setHeight(coordinates.getHeight() - 5);
@@ -32,9 +30,9 @@ public class Baloon extends Aircraft implements IFlyable {
             System.out.println("Baloon" + this.name + "(" + this.id + "): I can't reach the weather tower.");
         }
 
-        if (coordinates.getHeight() < 0) {
+        if ((coordinates.getHeight() < 0) || (coordinates.getLatitude() < 0) || (coordinates.getLongitude() < 0)) {
             weatherTower.unregister(this);
-            System.out.println(this.getClass().getSimpleName() + this.name + "(" +  this.id + ") unregistered from the tower. Simulation can't continue with negative coordinations.");
+            System.out.println(this.getClass().getSimpleName() + this.name + "(" +  this.id + ") unregistered from the tower. Simulation can't continue with negative coordinates.");
             System.out.println("Current coordinates (m) " + coordinates.getLongitude() +
                     " longitude, " + coordinates.getLatitude() +
                     " latitude, " + coordinates.getHeight() + " height");
